@@ -1,14 +1,14 @@
 import React from 'react';
+import Track from './Track';
 
-function Tracklist() {
+function Tracklist( {tracks, playlistTracks, setPlaylistTracks} ) {
     return (
-        <div className="Tracklist">
+        <div>
             <h2>Tracklist:</h2>
-            <ul>
-                <li>Track 1</li>
-                <li>Track 2</li>
-                <li>Track 3</li>
-            </ul>
+            {tracks.map(track => (
+                <Track key={track.id} track={track} playlistTracks={playlistTracks}
+          setPlaylistTracks={setPlaylistTracks}/>
+            ))}
         </div>
     );
 }
